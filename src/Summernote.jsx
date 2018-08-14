@@ -30,6 +30,7 @@ class ReactSummernote extends Component {
     this.insertImage = this.insertImage.bind(this);
     this.insertNode = this.insertNode.bind(this);
     this.insertText = this.insertText.bind(this);
+    this.insertCode = this.insertCode.bind(this);
 
     ReactSummernote.focus = this.focus.bind(this);
     ReactSummernote.isEmpty = this.isEmpty.bind(this);
@@ -41,6 +42,7 @@ class ReactSummernote extends Component {
     ReactSummernote.insertImage = this.insertImage.bind(this);
     ReactSummernote.insertNode = this.insertNode.bind(this);
     ReactSummernote.insertText = this.insertText.bind(this);
+    ReactSummernote.insertCode = this.insertCode.bind(this);
   }
 
   componentDidMount() {
@@ -107,7 +109,8 @@ class ReactSummernote extends Component {
         enable: this.enable,
         insertImage: this.insertImage,
         insertNode: this.insertNode,
-        insertText: this.insertText
+        insertText: this.insertText,
+        insertCode: this.insertCode
       });
     }
   }
@@ -174,6 +177,10 @@ class ReactSummernote extends Component {
 
   insertText(text) {
     this.editor.summernote('insertText', text);
+  }
+
+  insertCode(code) {
+    this.editor.summernote('code', code);
   }
 
   get callbacks() {
